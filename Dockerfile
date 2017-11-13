@@ -17,9 +17,12 @@ USER ${NB_USER}
 
 USER root
 
-# Add Julia dependencies
+# Add samtools
 RUN apt-get update && apt-get install samtools
-RUN pip install -r requirements.txt
 
 USER main
+
+RUN pip install -r requirements.txt
+
+
 
