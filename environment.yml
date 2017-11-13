@@ -1,6 +1,6 @@
 name: sim-environment
 channels:
-        - conda-forget
+        - conda-forge
         - bioconda
 dependencies:
         - python
