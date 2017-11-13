@@ -8,3 +8,5 @@ dependencies:
         - pindel
         - pysam
         - biopython
+        - pandas
+        - io
