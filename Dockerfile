@@ -1,6 +1,7 @@
 FROM biocontainers/samtools:1.3.1
 
-RUN pip install --no-cache-dir notebook==5.*
+#RUN apt-get update
+#RUN pip install --no-cache-dir notebook==5.*
 
 
 ENV NB_USER tt
