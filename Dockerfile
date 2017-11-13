@@ -18,4 +18,4 @@ FROM biocontainers/samtools:1.3.1
 #RUN chown -R ${NB_UID} ${HOME}
 #USER ${NB_USER}
 
-RUN gunzip data/chr2.fa.gz
+#RUN gunzip data/chr2.fa.gz
