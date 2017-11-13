@@ -1,0 +1,5 @@
+FROM andrewosh/binder-base
+
+RUN cd /home/jovyan/data
+RUN wget http://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr2.fa.gz 
+RUN gunzip chr2.fa.gz

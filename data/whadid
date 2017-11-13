@@ -1,0 +1,1000 @@
+  685  vim plotPermute.r
+  686  Rscript plotPermute.r
+  687  python ../scripts/runReplaceReads.py 
+  688  vim simSettings.txt 
+  689  python ../scripts/runReplaceReads.py 
+  690  samtools view -Sb /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/NA12878/HG001.GRCh38_full_plus_hs38d1_analysis_set_minus_alts.300x.bam chr6:43764558-43774558 > 10000bAroundCutsite.novoalign.bam
+  691  samtools view 10000bAroundCutsite.novoalign.bam | less
+  692  python ../scripts/runReplaceReads.py 
+  693   samtools sort -n 10000bAroundCutsite.novoalign.bam 10000bAroundCutsite.novoalign.bam.qsort
+  694  python ../scripts/runReplaceReads.py 
+  695  samtools sort -n 10000bAroundCutsite.novoalign.bam -o 10000bAroundCutsite.novoalign.bam.qsort
+  696  python ../scripts/runReplaceReads.py 
+  697  bedtools bamtofastq -i 10000bAroundCutsite.novoalign.bam.qsort.bam -fq 10000bAroundCutsite.novoalign.bam.qsort.bam.R1.fastq -fq2 10000bAroundCutsite.novoalign.bam.qsort.bam.R2.fastq
+  698  which bedtools
+  699  module avail
+  700  python ../scripts/runReplaceReads.py 
+  701  module load BEDTools_2.17 && bedtools bamtofastq -i 10000bAroundCutsite.novoalign.bam.qsort.bam -fq 10000bAroundCutsite.novoalign.bam.qsort.bam.R1.fastq -fq2 10000bAroundCutsite.novoalign.bam.qsort.bam.R2.fastq
+  702  less 10000bAroundCutsite.novoalign.bam.qsort.bam.R1.fastq
+  703  bedtools bamtofastq -i 10000bAroundCutsite.novoalign.bam.qsort.bam -fq 10000bAroundCutsite.novoalign.bam.qsort.bam.R1.fastq -fq2 10000bAroundCutsite.novoalign.bam.qsort.bam.R2.fastq
+  704  less 10000bAroundCutsite.novoalign.bam.qsort.bam.R1.fastq
+  705  ls
+  706  less 10000bAroundCutsite.novoalign.bam.qsort
+  707  samtools view 10000bAroundCutsite.novoalign.bam.qsort | less
+  708   bedtools bamtofastq -i 10000bAroundCutsite.novoalign.bam.qsort.bam -fq 10000bAroundCutsite.novoalign.bam.qsort.bam.R1.fastq -fq2 10000bAroundCutsite.novoalign.bam.qsort.bam.R2.fastq
+  709  ls
+  710  wc -l *
+  711  mv 10000bAroundCutsite.novoalign.bam.qsort 10000bAroundCutsite.novoalign.bam.qsort.bam
+  712   bedtools bamtofastq -i 10000bAroundCutsite.novoalign.bam.qsort.bam -fq 10000bAroundCutsite.novoalign.bam.qsort.bam.R1.fastq -fq2 10000bAroundCutsite.novoalign.bam.qsort.bam.R2.fastq
+  713  ls
+  714  rm 10000bAroundCutsite.novoalign.bam*
+  715  python ../scripts/runReplaceReads.py 
+  716  module load BEDTools_2.17 && bedtools bamtofastq -i 10000bAroundCutsite.novoalign.bam.qsort.bam -fq 10000bAroundCutsite.novoalign.bam.qsort.bam.R1.fastq -fq2 10000bAroundCutsite.novoalign.bam.qsort.bam.R2.fastq
+  717  wc -l *
+  718  python ../scripts/runReplaceReads.py 
+  719  bwa mem /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/WholeGenomeFasta/genome.fa 10000bAroundCutsite.novoalign.bam.qsort.bam.R1.fastq 10000bAroundCutsite.novoalign.bam.qsort.bam.R2.fastq > 10000bAroundCutsite.BWA.sam
+  720  module avail
+  721  python ../scripts/runReplaceReads.py 
+  722  module load bwa-0.6.2 && bwa mem /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/WholeGenomeFasta/genome.fa 10000bAroundCutsite.novoalign.bam.qsort.bam.R1.fastq 10000bAroundCutsite.novoalign.bam.qsort.bam.R2.fastq > 10000bAroundCutsite.BWA.sam
+  723  bwa
+  724  bwa mme
+  725  bwa meme
+  726  bwa mem
+  727  module avail
+  728  module load bwa-0.6.2
+  729  bwa meme
+  730  bwa mem
+  731  bwa --version
+  732  bwa
+  733  module avail | grep bwa
+  734  module avail | grep 'bwa'
+  735  module avail -a
+  736  source 
+  737  source -h
+  738  conda info --envs
+  739  source activate darpaSims_py27
+  740  conda install bwa
+  741  bwa
+  742  python ../scripts/runReplaceReads.py 
+  743  conda install numpy
+  744  python ../scripts/runReplaceReads.py 
+  745  conda install configparser
+  746  python ../scripts/runReplaceReads.py 
+  747  bwa mem /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/WholeGenomeFasta/genome.fa 10000bAroundCutsite.novoalign.bam.qsort.bam.R1.fastq 10000bAroundCutsite.novoalign.bam.qsort.bam.R2.fastq > 10000bAroundCutsite.BWA.sam
+  748  bwa
+  749  bwa index /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/version0.6.0/genome.fa
+  750  ls
+  751  vim simSettings.txt 
+  752  python ../scripts/runReplaceReads.py 
+  753  bwa mem /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/version0.6.0/genome.fa 10000bAroundCutsite.novoalign.bam.qsort.bam.R1.fastq 10000bAroundCutsite.novoalign.bam.qsort.bam.R2.fastq > 10000bAroundCutsite.BWA.sam
+  754  less 10000bAroundCutsite.BWA.sam 
+  755  ls
+  756  module avail
+  757  conda install picard-tools
+  758  conda install picard
+  759  picard
+  760  which picard
+  761  picard
+  762  python ../scripts/runReplaceReads.py 
+  763  ls
+  764  less 1kbAroundCutsite.BWA.bam.insertSizeMetrics
+  765  ls -alh
+  766  vim simSettings.txt 
+  767  ls
+  768  rm 10000bAroundCutsite.*
+  769  ls
+  770  rm 1kbAroundCutsite.BWA.*
+  771  ls
+  772  python ../scripts/runReplaceReads.py 
+  773  ls
+  774  python ../scripts/runReplaceReads.py 
+  775  ls
+  776  rm 10*
+  777  python ../scripts/runReplaceReads.py 
+  778  ls
+  779  rm 10*
+  780  python ../scripts/runReplaceReads.py 
+  781  ls
+  782  cp simSettings.txt simSettings.txt.big
+  783  vim simSettings.txt
+  784  python ../scripts/runReplaceReads.py 
+  785  vim simSettings.txt
+  786  python ../scripts/runReplaceReads.py 
+  787  vim ../scripts/runReplaceReads.py
+  788  rm ../scripts/runReplaceReads.py.commands.txt 
+  789  rm ../scripts/runReplaceReads.py.run.lsf 
+  790  python ../scripts/runReplaceReads.py 
+  791  ls
+  792  less runReplaceReads.py.commands.txt 
+  793  python /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/scripts/replaceReads.py --downsampleNumber 30 --swapFreq 0.025 --qualAdd 0 --swapChr chr6 --swapLoc 43769558 --reference /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/version0.6.0/genome.fa --unalteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.bam --unalteredNamesortedBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.nameSort.bam --alteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam --outfile out/replace_d30_p0.025_q0_r96.bam  --onlyIncludeAlteredWithIndel  
+  794  conda install pysam
+  795  python /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/scripts/replaceReads.py --downsampleNumber 30 --swapFreq 0.025 --qualAdd 0 --swapChr chr6 --swapLoc 43769558 --reference /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/version0.6.0/genome.fa --unalteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.bam --unalteredNamesortedBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.nameSort.bam --alteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam --outfile out/replace_d30_p0.025_q0_r96.bam  --onlyIncludeAlteredWithIndel  
+  796  pip install pysam
+  797  python /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/scripts/replaceReads.py --downsampleNumber 30 --swapFreq 0.025 --qualAdd 0 --swapChr chr6 --swapLoc 43769558 --reference /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/version0.6.0/genome.fa --unalteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.bam --unalteredNamesortedBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.nameSort.bam --alteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam --outfile out/replace_d30_p0.025_q0_r96.bam  --onlyIncludeAlteredWithIndel  
+  798  ls
+  799  vim test.py
+  800  python test.py 
+  801  conda remove pysam
+  802  conda install pysam
+  803  python test.py 
+  804  rm test.py 
+  805  ls
+  806  vim test.py
+  807  python test.py 
+  808  source deactivate
+  809  ls
+  810  python test.py 
+  811  ls
+  812  conda create --name pysamtest
+  813  source activate pysamtest
+  814  python test.py 
+  815  ls
+  816  python ../scripts/runReplaceReads.py 
+  817  python /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/scripts/replaceReads.py --downsampleNumber 30 --swapFreq 0.025 --qualAdd 0 --swapChr chr6 --swapLoc 43769558 --reference /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/version0.6.0/genome.fa --unalteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.bam --unalteredNamesortedBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.nameSort.bam --alteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam --outfile out/replace_d30_p0.025_q0_r96.bam  --onlyIncludeAlteredWithIndel  
+  818  vim ../scripts/replaceReads
+  819  vim ../scripts/replaceReads.py 
+  820  vim ../scripts/replaceReadsUtils.py 
+  821  ls
+  822  python /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/scripts/replaceReads.py --downsampleNumber 30 --swapFreq 0.025 --qualAdd 0 --swapChr chr6 --swapLoc 43769558 --reference /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/version0.6.0/genome.fa --unalteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.bam --unalteredNamesortedBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.nameSort.bam --alteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam --outfile out/replace_d30_p0.025_q0_r96.bam  --onlyIncludeAlteredWithIndel  
+  823  conda install bwa
+  824  bwa mem
+  825  bwa
+  826  python ../scripts/runReplaceReads.py 
+  827  python /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/scripts/replaceReads.py --downsampleNumber 30 --swapFreq 0.025 --qualAdd 0 --swapChr chr6 --swapLoc 43769558 --reference /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/version0.6.0/genome.fa --unalteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.bam --unalteredNamesortedBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.nameSort.bam --alteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam --outfile out/replace_d30_p0.025_q0_r96.bam  --onlyIncludeAlteredWithIndel  
+  828  python ../scripts/runReplaceReads.py 
+  829  python /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/scripts/replaceReads.py --downsampleNumber 30 --swapFreq 0.025 --qualAdd 0 --swapChr chr6 --swapLoc 43769558 --reference /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/version0.6.0/genome.fa --unalteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.bam --unalteredNamesortedBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.nameSort.bam --alteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam --outfile out/replace_d30_p0.025_q0_r96.bam  --onlyIncludeAlteredWithIndel  
+  830  less out/replace_d30_p0.025_q0_r96.bam*
+  831  python /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/scripts/replaceReads.py --downsampleNumber 30 --swapFreq 0.025 --qualAdd 0 --swapChr chr6 --swapLoc 43769558 --reference /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/version0.6.0/genome.fa --unalteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.bam --unalteredNamesortedBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.nameSort.bam --alteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam --outfile out/replace_d30_p0.025_q0_r96.bam  --onlyIncludeAlteredWithIndel  
+  832  less out/replace_d30_p0.025_q0_r96.bam*
+  833  less out/replace_d30_p0.025_q0_r96.bam.mutations.txt
+  834  more out/replace_d30_p0.025_q0_r96.bam.mutations.txt
+  835  python /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/scripts/replaceReads.py --downsampleNumber 30 --swapFreq 0.025 --qualAdd 0 --swapChr chr6 --swapLoc 43769558 --reference /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/version0.6.0/genome.fa --unalteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.bam --unalteredNamesortedBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.nameSort.bam --alteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam --outfile out/replace_d30_p0.025_q0_r96.bam  --onlyIncludeAlteredWithIndel  
+  836  more out/replace_d30_p0.025_q0_r96.bam.mutations.txt
+  837  python /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/scripts/replaceReads.py --downsampleNumber 30 --swapFreq 0.025 --qualAdd 0 --swapChr chr6 --swapLoc 43769558 --reference /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/version0.6.0/genome.fa --unalteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.bam --unalteredNamesortedBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/VEGFA/10kbAroundCutsite.BWA.nameSort.bam --alteredBam /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam --outfile out/replace_d30_p0.025_q0_r96.bam  --onlyIncludeAlteredWithIndel  
+  838  more out/replace_d30_p0.025_q0_r96.bam.mutations.txt
+  839  ls
+  840  cd ../
+  841  ls
+  842  cd 100x_reps_pairs/sm/
+  843  ls
+  844  less replace_d100_p0.5_q0_r16.bam.mutatedReads.txt 
+  845  less replace_d100_p0.5_q0_r16.bam.mutations.txt 
+  846  ls
+  847  cd ../
+  848  ls
+  849  cd ~/
+  850  ls
+  851  mkdir az
+  852  cd az/
+  853  ls
+  854  mkdir countClipped
+  855  cd countClipped/
+  856  ls
+  857  ls -al /data/joung/users/jose/AstraZeneca/circleseq/Generic_mm7/*/aligned/gM.bam >> bams.txt
+  858  vim bams.txt 
+  859  ls
+  860  ls -al /data/joung/users/jose/AstraZeneca/circleseq/Generic_mm7/gXm_MMxtra_307_171013/identified/gXm_*
+  861  less /data/joung/users/jose/AstraZeneca/circleseq/Generic_mm7/gXm_MMxtra_307_171013/identified/gXm_*
+  862  less -S /data/joung/users/jose/AstraZeneca/circleseq/Generic_mm7/gXm_MMxtra_307_171013/identified/gXm_*
+  863  ls -al /data/joung/users/jose/AstraZeneca/circleseq/Generic_mm7/*/identified/gXm_count.txt > counts.txt
+  864  vim counts.txt 
+  865  vim count.pl
+  866  vim counts.txt 
+  867  mkdir temp
+  868  cd temp/
+  869  cp /data/pinello/PROJECTS/2017_07_KO_INTERACTION_sp_sa_cas9/analysis_rick/analysis/input/6-23-17_epigenetics_AML_redo.xlsx .
+  870  popd
+  871  exit
+  872  ls
+  873  ~/ky711/bsubInteractive.sh 
+  874  ls
+  875  cd az/
+  876  ls
+  877  cd aln/
+  878  ls
+  879  cd alnAll/
+  880  ls
+  881  source activate kendell_py27
+  882  ls
+  883  bwa
+  884  bwa mem 
+  885  history | less
+  886  ls
+  887  less ../../circleseq/gXm_MMxtra_307_171013/gXm_MMxtra_307_171013.yaml 
+  888  ls
+  889  bwa mem mm10.chr4.fa /data/joung/users/jose/AstraZeneca/fastq/170911_M05428_0017/307gXm_S1_L001_R1_001.fastq.gz
+  890  bwa mem mm10.chr4.fa /data/joung/users/jose/AstraZeneca/fastq/170911_M05428_0017/307gXm_S1_L001_R1_001.fastq.gz /data/joung/users/jose/AstraZeneca/fastq/170911_M05428_0017/307gXm_S1_L001_R2_001.fastq.gz
+  891  rm core.389
+  892  bwa mem -v mm10.chr4.fa /data/joung/users/jose/AstraZeneca/fastq/170911_M05428_0017/307gXm_S1_L001_R1_001.fastq.gz /data/joung/users/jose/AstraZeneca/fastq/170911_M05428_0017/307gXm_S1_L001_R2_001.fastq.gz
+  893  bwa mem | less
+  894  ls
+  895  cd az/
+  896  ls
+  897  cd aln/
+  898  ls
+  899  cd alnAll/
+  900  ls
+  901  rm core.389
+  902  rm core.389*
+  903  ls
+  904  vim aln.sh
+  905  bwa mem -v mm10.chr4.fa /data/joung/users/jose/AstraZeneca/fastq/170911_M05428_0017/307gXm_S1_L001_R1_001.fastq.gz /data/joung/users/jose/AstraZeneca/fastq/170911_M05428_0017/307gXm_S1_L001_R2_001.fastq.g
+  906  source activate kendell_lab27
+  907  ls
+  908  bwa mem -v 4 mm10.chr4.fa /data/joung/users/jose/AstraZeneca/fastq/170911_M05428_0017/307gXm_S1_L001_R1_001.fastq.gz /data/joung/users/jose/AstraZeneca/fastq/170911_M05428_0017/307gXm_S1_L001_R2_001.fastq.gz
+  909  ls
+  910  cd az/
+  911  ls
+  912  cd aln/alnAll/
+  913  ls
+  914  more aln.sh 
+  915  ls
+  916  gunzip -c /data/joung/users/jose/AstraZeneca/fastq/170911_M05428_0
+  917  gunzip -c /data/joung/users/jose/AstraZeneca/fastq/170911_M05428_0017/307gXm_S1_L001_R1_001.fastq.gz | head
+  918  ls
+  919  cd ../../circleseq/
+  920  ls
+  921  cd gXm_MMxtra_30
+  922  cd gXm_MMxtra_307_171013/
+  923  ls
+  924  cd analysis/
+  925  ls
+  926  cd ../
+  927  ls
+  928  cd ../
+  929  ls
+  930  cd ../
+  931  ls
+  932  cd aln/
+  933  ls
+  934  cd alnAll/
+  935  ls
+  936  vim mm10.chr4.fa
+  937  bjobs
+  938  ~/ky711/bsubInteractive.sh 
+  939  ls
+  940  chmod +x aln.sh 
+  941  ./aln.sh 
+  942  source activate kendell_py27
+  943  ./aln.sh 
+  944  ls
+  945  less gXm_MMxtra_307.sam 
+  946  more aln.sh 
+  947  bwa mem -v mm10.chr4.fa /data/joung/users/jose/AstraZeneca/fastq/170911_M05428_0
+  948  017/307gXm_S1_L001_R1_001.fastq.gz /data/joung/users/jose/AstraZeneca/fastq/1709
+  949  11_M05428_0017/307gXm_S1_L001_R2_001.fastq.gz
+  950  vim aln.sh 
+  951  ./aln.sh 
+  952  rm mm10.chr4.fa.*
+  953  ls
+  954  rm core.30460 
+  955  bwa index mm10.chr4.fa 
+  956  ./aln.sh 
+  957  vim aln.sh 
+  958  ./aln.sh 
+  959  ./aln309.sh 
+  960  vim aln309.sh 
+  961  ./aln309.sh 
+  962  samtools view -f 4 gXm_MMxtra_307_171013.sam | less -S
+  963  samtools view -F 4 gXm_MMxtra_307_171013.sam | less -S
+  964  samtools view -c -F 4 gXm_MMxtra_307_171013.sam
+  965  samtools view -c -F 4 gXm_MMxtra_309_171013.sam
+  966  vim counts.txt
+  967  mv counts.txt alnCounts.txt
+  968  ls
+  969  samtools view -f 4 gXm_MMxtra_307_171013.sam | less -S
+  970  samtools view -F 4 gXm_MMxtra_307_171013.sam | less -S
+  971  vim locs.txt
+  972  perl count.pl locs.txt
+  973  ls
+  974  cd az/
+  975  ls
+  976  cd aln/
+  977  ls
+  978  cd alnAll/
+  979  ls
+  980  more ../../circleseq/gXm_MMxtra_307_171013/gXm_MMxtra_307_171013.yaml 
+  981  more ../../circleseq/gXm_MMxtra_309_171013/gXm_MMxtra_309_171013.yaml 
+  982  cp aln.sh aln309.sh
+  983  vim aln309.sh 
+  984  ls
+  985  mv aln.sh aln307.sh
+  986  head gXm_MMxtra_307*
+  987  rm gXm_MMxtra_307.sam 
+  988  ls
+  989  cp ../../countClipped/count.pl .
+  990  head count.pl 
+  991  ls
+  992  less ../../countClipped/files.txt 
+  993  ls
+  994  vim count.pl 
+  995  cd 2017_07_CRISPRESSO_DOS/
+  996  ls
+  997  cd src
+  998  ls
+  999  ./run.sh
+ 1000  source activate kendell_py27
+ 1001  ./run.sh
+ 1002  conda install matplotlib
+ 1003  ls
+ 1004  ./run.sh
+ 1005  conda install seaborn
+ 1006  ./run.sh
+ 1007  ls
+ 1008  cd CRISPResso
+ 1009  ls
+ 1010  ./setup.sh 
+ 1011  conda install Cython
+ 1012  ./setup.sh 
+ 1013  cd ../
+ 1014  ./run.sh
+ 1015  ls
+ 1016  cd CRISPResso
+ 1017  ls
+ 1018  vim setup.*
+ 1019  ls
+ 1020  pwd
+ 1021  ls
+ 1022  ./setup.sh 
+ 1023  ls
+ 1024  cd ../
+ 1025  ./setup.sh 
+ 1026  ./run.sh
+ 1027  cd CRISPResso
+ 1028  ls
+ 1029  ./setup.sh 
+ 1030  cd ../
+ 1031  ./run.sh
+ 1032  cd CRISPResso
+ 1033  ./setup.sh 
+ 1034  cd ../
+ 1035  ls
+ 1036  ./run.sh
+ 1037  cd CRISPResso
+ 1038  ./setup.sh 
+ 1039  cd ../
+ 1040  ./run.sh
+ 1041  cd CRISPResso
+ 1042  ./setup.sh 
+ 1043  ls
+ 1044  cd ../
+ 1045  ./run.sh
+ 1046  cd CRISPResso
+ 1047  ./setup.sh 
+ 1048  cd ../
+ 1049  ./run.sh
+ 1050  cd CRISPResso
+ 1051  ./setup.sh 
+ 1052  cd ../
+ 1053  ./run.sh
+ 1054  ls
+ 1055  vim run.sh
+ 1056  ls
+ 1057  vim overlap.short.fq
+ 1058  less CRISPResso_on_overlap.short.fq/Amplicon_sub_frequency_table.txt 
+ 1059  ./run.sh
+ 1060  less CRISPResso_on_overlap.short.fq/Amplicon_sub_frequency_table.txt 
+ 1061  less CRISPResso_on_overlap.short.fq/Alleles_frequency_table.txt 
+ 1062  ls
+ 1063  less CRISPResso_on_overlap.short.fq/Alleles_frequency_table.txt
+ 1064  less -RS CRISPResso_on_overlap.short.fq/Alleles_frequency_table.txt
+ 1065  ls
+ 1066  less CRISPResso_on_overlap.short.fq/Amplicon.effect_vector_substitution.txt 
+ 1067  less CRISPResso_on_overlap.short.fq/Amplicon_sub_frequency_table.txt
+ 1068  less -RS CRISPResso_on_overlap.short.fq/Amplicon_sub_frequency_table.txt
+ 1069  ls
+ 1070  less CRISPResso_on_overlap.short.fq/Amplicon_sub_frequency_table.txt 
+ 1071  mv CRISPResso_on_overlap.short.fq/Amplicon_sub_frequency_table.txt CRISPResso_on_overlap.short.fq/Amplicon_sub_frequency_table.txt.old
+ 1072  ./run.sh
+ 1073  ls
+ 1074  less CRISPResso_on_overlap.short.fq/Amplicon_sub_frequency_table.txt 
+ 1075  diff CRISPResso_on_overlap.short.fq/Amplicon_sub_frequency_table.txt CRISPResso_on_overlap.short.fq/Amplicon_sub_frequency_table.txt.old 
+ 1076  ls
+ 1077  cd ../
+ 1078  ls
+ 1079  cd test
+ 1080  ls
+ 1081  more delTest.105bp.0.5del5bp.500.fq
+ 1082  less delTest.105bp.0.5del5bp.500.fq
+ 1083  ls
+ 1084  vim runTests.py
+ 1085  ls
+ 1086  ls *.py
+ 1087  vim testTests.py 
+ 1088  vim runTests.py
+ 1089  python runTests.py 
+ 1090  less runTests.py.commands.txt 
+ 1091  /data/pinello/PROJECTS/2017_07_CRISPRESSO_DOS/src/CRISPResso.py -r1 same.105bp.500.fq -a CTGCTGCTTGCGTACGGCTTGTGATCTCTCTGGATTCGTGCGGCTGTGTTTTTTCCCTCTTTTCTCGCTTGCAAACTGCTTTCCTTGCTCCGTCGCTCCTGGCCT -g GATTCGTGCGGCTGTGTTTT -c CGGCTGTGTTTTTTCCCTCTTTTCT -n c2.same.105bp.500.w_guide.w_guide_w_codingseq
+ 1092  less runTests.py.commands.txt 
+ 1093  /data/pinello/PROJECTS/2017_07_CRISPRESSO_DOS/src/CRISPResso.py -r1 delTest.105bp.0.5del5bp.500.fq -a CTGCTGCTTGCGTACGGCTTGTGATCTCTCTGGATTCGTGCGGCTGTGTTTTTTCCCTCTTTTCTCGCTTGCAAACTGCTTTCCTTGCTCCGTCGCTCCTGGCCT -g GATTCGTGCGGCTGTGTTTT -c CGGCTGTGTTTTTTCCCTCTTTTCT -n c2.delTest.105bp.0.5del5bp.500.w_guide.w_guide_w_codingseq
+ 1094  /data/pinello/PROJECTS/2017_07_CRISPRESSO_DOS/src/CRISPResso.py -r1 delTest.105bp.0.5del5bp.500.fq -a CTGCTGCTTGCGTACGGCTTGTGATCTCTCTGGATTCGTGCGGCTGTGTTTTTTCCCTCTTTTCTCGCTTGCAAACTGCTTTCCTTGCTCCGTCGCTCCTGGCCT -g GATTCGTGCGGCTGTGTTTT -c CGGCTGTGTTTTTTCCCTCTTTTCT -n c2.delTest.105bp.0.5del5bp.500.w_guide.w_guide_w_codingseq -w 20
+ 1095  less runTests.py.commands.txt 
+ 1096  /data/pinello/PROJECTS/2017_07_CRISPRESSO_DOS/src/CRISPResso.py -r1 insTest.105bp.0.5ins5bp.500.fq -a CTGCTGCTTGCGTACGGCTTGTGATCTCTCTGGATTCGTGCGGCTGTGTTTTTTCCCTCTTTTCTCGCTTGCAAACTGCTTTCCTTGCTCCGTCGCTCCTGGCCT -g GATTCGTGCGGCTGTGTTTT -c CGGCTGTGTTTTTTCCCTCTTTTCT -n c2.insTest.105bp.0.5ins5bp.500.w_guide.w_guide_w_codingseq
+ 1097  python
+ 1098  ls
+ 1099  /data/pinello/PROJECTS/2017_07_CRISPRESSO_DOS/src/CRISPResso.py -r1 insTest.105bp.0.5ins5bp.500.fq -a CTGCTGCTTGCGTACGGCTTGTGATCTCTCTGGATTCGTGCGGCTGTGTTTTTTCCCTCTTTTCTCGCTTGCAAACTGCTTTCCTTGCTCCGTCGCTCCTGGCCT -g GATTCGTGCGGCTGTGTTTT -c CGGCTGTGTTTTTTCCCTCTTTTCT -n c2.insTest.105bp.0.5ins5bp.500.w_guide.w_guide_w_codingseq
+ 1100  python
+ 1101  /data/pinello/PROJECTS/2017_07_CRISPRESSO_DOS/src/CRISPResso.py -r1 insTest.105bp.0.5ins5bp.500.fq -a CTGCTGCTTGCGTACGGCTTGTGATCTCTCTGGATTCGTGCGGCTGTGTTTTTTCCCTCTTTTCTCGCTTGCAAACTGCTTTCCTTGCTCCGTCGCTCCTGGCCT -g GATTCGTGCGGCTGTGTTTT -c CGGCTGTGTTTTTTCCCTCTTTTCT -n c2.insTest.105bp.0.5ins5bp.500.w_guide.w_guide_w_codingseq
+ 1102  /data/pinello/PROJECTS/2017_07_CRISPRESSO_DOS/src/CRISPResso.py -r1 delTest.105bp.0.5del5bp.500.fq -a CTGCTGCTTGCGTACGGCTTGTGATCTCTCTGGATTCGTGCGGCTGTGTTTTTTCCCTCTTTTCTCGCTTGCAAACTGCTTTCCTTGCTCCGTCGCTCCTGGCCT -g GATTCGTGCGGCTGTGTTTT -c CGGCTGTGTTTTTTCCCTCTTTTCT -n c2.delTest.105bp.0.5del5bp.500.w_guide.w_guide_w_codingseq -w 20
+ 1103  /data/pinello/PROJECTS/2017_07_CRISPRESSO_DOS/src/CRISPResso.py -r1 delTest.105bp.0.5del5bp.500.fq -a CTGCTGCTTGCGTACGGCTTGTGATCTCTCTGGATTCGTGCGGCTGTGTTTTTTCCCTCTTTTCTCGCTTGCAAACTGCTTTCCTTGCTCCGTCGCTCCTGGCCT -g GATTCGTGCGGCTGTGTTTT -c CGGCTGTGTTTTTTCCCTCTTTTCT -n c2.delTest.105bp.0.5del5bp.500.w_guide.w_guide_w_codingseq
+ 1104  vim testTests.py 
+ 1105  vim runTests.py
+ 1106  ls
+ 1107  cd ../
+ 1108  ls
+ 1109  cd datasets/
+ 1110  ls
+ 1111  mkdir jason
+ 1112  cd jason/
+ 1113  ls
+ 1114  ls ../
+ 1115  python ../../src/CRISPResso.py 
+ 1116  python ../../src/CRISPResso.py -r1 /PHShome/jg167/101817OC5_S5_L001_R1_001.fastq -r2 /PHShome/jg167/101817OC5_S5_L001_R2_001.fastq -a GCCTGGCCTTGGGAGCTTCCTGTCACCTCACAGAGCTCACTGAACGCTGGCATGGCTCTAGTGCTTTCCAGGGGCACGTACTCCCCCGAGCTCCTGACAGCACAATCCACGTGTCACGCATGACCCCTCATACAGTTGCGCACCATACCATTCCCATTTGACAGATAAGGAAACTGAGGCCCGGAAAGGAAAGTGGCTGGCTGAGACTCACGGCAGATCCATGGCAGAGCCG -an site_25 -n S5
+ 1117  history 3 >> whatdid
+ 1118  vim whatdid 
+ 1119  ls
+ 1120  cd ../
+ 1121  ls
+ 1122  cd anastasia/
+ 1123  ls
+ 1124  ls *
+ 1125  less CRISPResso2sequences_AL.docx.txt 
+ 1126  ls */*.gz >> batch.txt
+ 1127  vim batch.txt 
+ 1128  ls
+ 1129  python ../../src/CRISPRessoBatch.py 
+ 1130  python ../../src/CRISPRessoBatch.py --batch_settings batch.txt 
+ 1131  ls
+ 1132  more CRISPResso2sequences_AL.docx.txt 
+ 1133  python ../../src/CRISPRessoBatch.py --batch_settings batch.txt -a ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCATCT
+ 1134  GACTCCTGAGGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCA
+ 1135  python ../../src/CRISPRessoBatch.py --batch_settings batch.txt -a ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCATCTGACTCCTGAGGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGTTGGTATCAAGGTTACAAGACAGGTTTAAGGAGACC,ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCACCTGACTCCTGTGGAGAAGTCTGCGGTTACTGCGCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGTTGGTATCAAGGTTACAAGACAGGTTTAAGGAGACC -an reference,HDR -g GAACGGGGTGTCGCGTCATT
+ 1136  python ../../src/CRISPRessoBatch.py --batch_settings batch.txt
+ 1137  cp batch.txt batch.txt.old
+ 1138  vim batch.txt.old 
+ 1139  python ../../src/CRISPRessoBatch.py --batch_settings batch.txt.old 
+ 1140  vim batch.txt.old 
+ 1141  python ../../src/CRISPRessoBatch.py --batch_settings batch.txt.old 
+ 1142  vim batch.txt.old 
+ 1143  python ../../src/CRISPRessoBatch.py --batch_settings batch.txt.old 
+ 1144  python ../../src/CRISPRessoBatch.py --batch_settings batch.txt
+ 1145  python ../../src/CRISPRessoBatch.py --batch_settings batch.txt -a ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCATCTGACTCCTGAGGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGTTGGTATCAAGGTTACAAGACAGGTTTAAGGAGACC,ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCACCTGACTCCTGTGGAGAAGTCTGCGGTTACTGCGCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGTTGGTATCAAGGTTACAAGACAGGTTTAAGGAGACC -an reference,HDR -g GAACGGGGTGTCGCGTCATT
+ 1146  python ../../src/CRISPRessoBatch.py --batch_settings batch.txt
+ 1147  python ../../src/CRISPRessoBatch.py --batch_settings batch.txt -a ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCATCTGACTCCTGAGGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGTTGGTATCAAGGTTACAAGACAGGTTTAAGGAGACC,ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCACCTGACTCCTGTGGAGAAGTCTGCGGTTACTGCGCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGTTGGTATCAAGGTTACAAGACAGGTTTAAGGAGACC -an reference,HDR -g GAACGGGGTGTCGCGTCATT
+ 1148  conda install pandas
+ 1149  ~/ky711/bsubInteractive.sh 
+ 1150  pushd /data/joung/users/maggie/AZ_run_1%/newDemultiplex/
+ 1151  ls
+ 1152  ls fastqs/
+ 1153  ls
+ 1154  cd fastqs/
+ 1155  ls
+ 1156  less Undetermined_S0_L001_R1_001.fastq.gz 
+ 1157  less /data/joung/sequencing_bcl/171024_M01326_0354_000000000-BGM75/SampleSheet.csv 
+ 1158  ls
+ 1159  less /data/joung/sequencing_bcl/20171023_AS207_GUIDE-seq_RUN1/171024_M05428_0038_000000000-BF9FK/RunInfo.xml 
+ 1160  ls
+ 1161  less Reports/html/index.html 
+ 1162  less Reports/html/000000000-BF9FK/default/all/all/laneBarcode.html 
+ 1163  less Reports/html/index.html 
+ 1164  less /data/joung/sequencing_bcl/20171023_AS207_GUIDE-seq_RUN1/171024_M05428_0038_000000000-BF9FK/RunInfo.xml 
+ 1165  ls
+ 1166  ls -al
+ 1167  ls -al 
+ 1168  ls -al
+ 1169  ls
+ 1170  less /data/joung/sequencing_bcl/20171023_AS207_GUIDE-seq_RUN1/171024_M05428_0038_000000000-BF9FK/RunInfo.xml 
+ 1171  ls
+ 1172  ls /data/joung/sequencing_bcl/20171023_AS207_GUIDE-seq_RUN1/171024_M05428_0038_000000000-BF9FK/Data/Intensities/BaseCalls/
+ 1173  less /data/joung/sequencing_bcl/20171023_AS207_GUIDE-seq_RUN1/171024_M05428_0038_000000000-BF9FK/Data/Intensities/BaseCalls/Undetermined_S0_L001_I1_001.fastq.gz 
+ 1174  less /data/joung/sequencing_bcl/20171023_AS207_GUIDE-seq_RUN1/171024_M05428_0038_000000000-BF9FK/Data/Intensities/BaseCalls
+ 1175  ls -alh /data/joung/sequencing_bcl/20171023_AS207_GUIDE-seq_RUN1/171024_M05428_0038_000000000-BF9FK/Data/Intensities/BaseCalls
+ 1176  less /data/joung/sequencing_bcl/20171023_AS207_GUIDE-seq_RUN1/171024_M05428_0038_000000000-BF9FK/Data/Intensities/BaseCalls/Undetermined_S0_L001_I1_001.fastq.gz 
+ 1177* less /data/joung/sequencing_bcl/20171023_AS207_GUIDE-seq_RUN1/171024_M05428_0038_000000000-BF9FK/Data/Intensities/BaseCalls/Undetermined_S0_L001_I2_001.fastq.gz
+ 1178  less /data/joung/sequencing_bcl/20171023_AS207_GUIDE-seq_RUN1/171024_M05428_0038_000000000-BF9FK/Data/Intensities/BaseCalls/Undetermined_S0_L001_I1_001.fastq.gz 
+ 1179  less /data/joung/sequencing_bcl/20171023_AS207_GUIDE-seq_RUN1/171024_M05428_0038_000000000-BF9FK/Data/Intensities/BaseCalls/Undetermined_S0_L001_I2_001.fastq.gz 
+ 1180* perl ~/az/aln/alnUnalignedBits/freqUnaligned/countFreq.pl /data/joung/sequencing_bcl/20171023_AS207_GUIDE-seq_RUN1/171024_M05428_0038_000000000-BF9FK/Data/Intensities/BaseCalls/Undetermined_S0_L001_I1_001.fastq.gz 
+ 1181  popd
+ 1182  ls
+ 1183  python ../../src/CRISPRessoBatch.py --batch_settings batch.txt -a ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCATCTGACTCCTGAGGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGTTGGTATCAAGGTTACAAGACAGGTTTAAGGAGACC,ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCACCTGACTCCTGTGGAGAAGTCTGCGGTTACTGCGCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGTTGGTATCAAGGTTACAAGACAGGTTTAAGGAGACC -an reference,HDR -g GAACGGGGTGTCGCGTCATT
+ 1184  history >> CRISPRessoBatch_on_batch.sh
+ 1185  vim CRISPRessoBatch_on_batch.sh 
+ 1186  ls
+ 1187  python ../../src/CRISPRessoBatch.py --batch_settings batch.txt -a ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCATCTGACTCCTGAGGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGTTGGTATCAAGGTTACAAGACAGGTTTAAGGAGACC,ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCACCTGACTCCTGTGGAGAAGTCTGCGGTTACTGCGCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGTTGGTATCAAGGTTACAAGACAGGTTTAAGGAGACC -an reference,HDR -g GAACGGGGTGTCGCGTCATT
+ 1188  less
+ 1189  python /data/pinello/PROJECTS/2017_07_CRISPRESSO_DOS/src/CRISPResso.py -o CRISPRessoBatch_on_batch --name S42 --fastq_r1 "42-50400609/42_S42_L001_R1_001.fastq.gz" --fastq_r2 "42-50400609/42_S42_L001_R2_001.fastq.gz" --amplicon_seq ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCATCTGACTCCTGAGGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGTTGGTATCAAGGTTACAAGACAGGTTTAAGGAGACC,ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCACCTGACTCCTGTGGAGAAGTCTGCGGTTACTGCGCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGTTGGTATCAAGGTTACAAGACAGGTTTAAGGAGACC --amplicon_name reference,HDR --amplicon_min_alignment_score 60 --amplicon_min_unmodified_score 98 --guide_seq GAACGGGGTGTCGCGTCATT --min_average_read_quality 0 --min_single_bp_quality 0 --name S42 --trimmomatic_options_string " ILLUMINACLIP:/data/pinello/PROJECTS/2017_07_CRISPRESSO_DOS/src/CRISPResso/data/NexteraPE-PE.fa:0:90:10:0:true MINLEN:40" --min_paired_end_reads_overlap 4 --window_around_sgrna 1 --cleavage_offset -3 --exclude_bp_from_left 15 --exclude_bp_from_right 15 --needleman_wunsch_gap_open -20 --needleman_wunsch_gap_extend -2 --offset_around_cut_to_plot 20 --min_frequency_alleles_around_cut_to_plot 0.2 --max_rows_alleles_around_cut_to_plot 50 --default_min_aln_score 60
+ 1190  vim tmp.txt
+ 1191  python /data/pinello/PROJECTS/2017_07_CRISPRESSO_DOS/src/CRISPResso.py -o CRISPRessoBatch_on_batch --name S42 --fastq_r1 "42-50400609/42_S42_L001_R1_001.fastq.gz" --fastq_r2 "42-50400609/42_S42_L001_R2_001.fastq.gz" --amplicon_seq ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCATCTGACTCCTGAGGAGAAGTCTGCCGTTACTGCCCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGTTGGTATCAAGGTTACAAGACAGGTTTAAGGAGACC,ACATTTGCTTCTGACACAACTGTGTTCACTAGCAACCTCAAACAGACACCATGGTGCACCTGACTCCTGTGGAGAAGTCTGCGGTTACTGCGCTGTGGGGCAAGGTGAACGTGGATGAAGTTGGTGGTGAGGCCCTGGGCAGGTTGGTATCAAGGTTACAAGACAGGTTTAAGGAGACC --amplicon_name reference,HDR --amplicon_min_alignment_score 60 --amplicon_min_unmodified_score 98 --guide_seq GAACGGGGTGTCGCGTCATT --min_average_read_quality 0 --min_single_bp_quality 0 --name S42 --trimmomatic_options_string " ILLUMINACLIP:/data/pinello/PROJECTS/2017_07_CRISPRESSO_DOS/src/CRISPResso/data/NexteraPE-PE.fa:0:90:10:0:true MINLEN:40" --min_paired_end_reads_overlap 4 --window_around_sgrna 1 --cleavage_offset -3 --exclude_bp_from_left 15 --exclude_bp_from_right 15 --needleman_wunsch_gap_open -20 --needleman_wunsch_gap_extend -2 --offset_around_cut_to_plot 20 --min_frequency_alleles_around_cut_to_plot 0.2 --max_rows_alleles_around_cut_to_plot 50 --default_min_aln_score 60
+ 1192  bjobs
+ 1193  ls
+ 1194  cd ../
+ 1195  ls
+ 1196  cd ../
+ 1197  ls
+ 1198  cd test
+ 1199  ls
+ 1200  cp insTest.105bp.0.5ins5bp.500.fq subTest.105bp.0.5sAT.500.fq
+ 1201  vim subTest.105bp.0.5sAT.500.fq 
+ 1202  wc -l subTest.105bp.0.5sAT.500.fq 
+ 1203  wc -l insTest.105bp.0.5ins5bp.500.fq
+ 1204  vim runTests.py
+ 1205  mv subTest.105bp.0.5sAT.500.fq  subTest.105bp.0.5sCT.500.fq 
+ 1206  vim runTests.py
+ 1207  ls
+ 1208  perl runTests.py
+ 1209  python runTests.py 
+ 1210  bsub < runTests.py.run.lsf
+ 1211  bjobs
+ 1212  ls
+ 1213  bjobs
+ 1214  ls
+ 1215  less CRISPResso_on_c2_subTest_105bp_0_5sCT_500/CRISPResso_RUNNING_LOG.txt 
+ 1216  bjobs
+ 1217  less CRISPResso_on_c2_subTest_105bp_0_5sCT_500/CRISPResso_RUNNING_LOG.txt 
+ 1218  ls
+ 1219  less runTests.py.run.lsf*
+ 1220  bsub < runTests.py.run.lsf
+ 1221  rm runTests.py.run.lsf.*
+ 1222  bjobs
+ 1223  ls
+ 1224  less runTests.py.run.lsf.*
+ 1225  bjobs
+ 1226  less CRISPResso_on_c2_subTest_105bp_0_5sCT_500/CRISPResso_RUNNING_LOG.txt 
+ 1227  less CRISPResso_on_c2_subTest_105bp_0_5sCT_500/Amplicon_nucleotide_*
+ 1228  less -S CRISPResso_on_c2_subTest_105bp_0_5sCT_500/Amplicon_nucleotide_*
+ 1229  ls
+ 1230  cd ../
+ 1231  ls
+ 1232  cd datasets/
+ 1233  ls
+ 1234  cd yao/
+ 1235  ls
+ 1236  less CRISPResso_on_2-2-OT001.sh 
+ 1237  ls
+ 1238  pushd ../../
+ 1239  ls
+ 1240  cd ~/az/
+ 1241  ls
+ 1242  cd aln/
+ 1243  ls
+ 1244  cd alnUnalignedBits/
+ 1245  ls
+ 1246  cd freqUnaligned_all/
+ 1247  ls
+ 1248  bjobs
+ 1249  perl countNs.pl 
+ 1250  less countNs.pl.out 
+ 1251  ls
+ 1252  less countFreq.pl._GenericPCSK9KI_mm7_gXm_MM_309_171018_aligned_gXm.bam 
+ 1253  vim countFreq.pl
+ 1254  perl runCountFreq.pl
+ 1255  bsub < runCountFreq.pl.run.sh
+ 1256  popd
+ 1257  ls
+ 1258  ;s
+ 1259  ls
+ 1260  less amplicon.txt 
+ 1261  ls
+ 1262  less CRISPRessoPooled_on_pooledkeepInt/CRISPResso_on_REGION_chr2_177912292_177912541/CRISPResso_RUNNING_LOG.txt 
+ 1263  ls
+ 1264  cd ../
+ 1265  ls
+ 1266  cd anastasia/
+ 1267  ls
+ 1268  pushd ~/az/
+ 1269  ls
+ 1270  cd aln/
+ 1271  ls
+ 1272  cd alnUnalignedBits/
+ 1273  ls
+ 1274  cd freqUnaligned_all/
+ 1275  ls
+ 1276  perl countNs.pl
+ 1277  less countNs.pl
+ 1278  vim countNs.pl
+ 1279  ls
+ 1280  wc -l *
+ 1281  perl countFreq.pl
+ 1282  vim countFreq.pl
+ 1283  perl countFreq.pl
+ 1284  vim countFreq.pl
+ 1285  perl runCountFreq.pl
+ 1286  bsub < runCountFreq.pl.run.sh
+ 1287  bjobs
+ 1288  ls
+ 1289  popd
+ 1290  ls
+ 1291  cd ../
+ 1292  ls
+ 1293  cd yao/
+ 1294  ls
+ 1295  mkdir amplicons.txt
+ 1296  rmdir amplicons.txt/
+ 1297  vim amplicons.txt
+ 1298  ls
+ 1299  source activate crispresso1_py27
+ 1300  CRISPRessoPooled -h
+ 1301  bjobs
+ 1302  pushd ~/az/
+ 1303  ls
+ 1304  cd aln/
+ 1305  ls
+ 1306  cd alnAll/
+ 1307  cd ../alnUnalignedBits/
+ 1308  ls
+ 1309  cd freqUnaligned_all/
+ 1310  ls
+ 1311  bjobs
+ 1312  wc -l *
+ 1313  vim countNs.pl
+ 1314  bjobs
+ 1315  vim countNs.pl
+ 1316  perl countNs.pl
+ 1317  less countNs.pl
+ 1318  R
+ 1319  vim countNs.pl.out.r
+ 1320  Rscript countNs.pl.out.r
+ 1321  ;s
+ 1322  ls
+ 1323  less countFreq.pl._GenericPCSK9KI_mm7_gP_MM_307_171018_aligned_gP.bam 
+ 1324  less countFreq.pl._GenericPCSK9KI_mm7_gXm_MMxtra_307_171018_aligned_gXm.bam 
+ 1325  less *.bam
+ 1326  vim countNs.pl
+ 1327  perl countNs.pl
+ 1328  Rscript countNs.pl.out.r
+ 1329  less countNs.pl.out
+ 1330  vim countNs.pl
+ 1331  perl countNs.pl
+ 1332  Rscript countNs.pl.out.r
+ 1333  vim countNs.pl.out.r
+ 1334  Rscript countNs.pl.out.r
+ 1335  vim countNs.pl.out.r
+ 1336  Rscript countNs.pl.out.r
+ 1337  vim countNs.pl.out.r
+ 1338  Rscript countNs.pl.out.r
+ 1339  vim countNs.pl.out.r
+ 1340  more countNs.pl.out.r
+ 1341  R
+ 1342  vim countNs.pl.out.r
+ 1343  Rscript countNs.pl.out.r
+ 1344  popd
+ 1345  CRISPREssobatch
+ 1346  CRISPREssoBatch
+ 1347  CRISPRessoPooled
+ 1348  CRISPRessoPooled -h
+ 1349  qls
+ 1350  ls
+ 1351  cp CRISPRessoPooled_on_pooledkeepInt.bsub CRISPRessoPooled_on_pooledkeepIntwAmps.bsub
+ 1352  vim CRISPRessoPooled_on_pooledkeepIntwAmps.bsub 
+ 1353  bsub < CRISPRessoPooled_on_pooledkeepIntwAmps.bsub 
+ 1354  bjobs
+ 1355  ls
+ 1356  ~/ky711/bsubInteractive.sh 
+ 1357  cd ../
+ 1358  ls
+ 1359  cd anastasia/
+ 1360  ls
+ 1361  cd batchOneAmp/CRISPRessoBatch_on_batch/
+ 1362  ls
+ 1363  cd CRISPResso_on_S38/
+ 1364  cd ../CRISPResso_on_S37/
+ 1365  ls
+ 1366  less Alleles_frequency_table.txt 
+ 1367  vim tmp.txt
+ 1368  fg
+ 1369  ls
+ 1370  pushd /data/joung/users/jose/
+ 1371  ls
+ 1372  cd AstraZeneca/
+ 1373  ls
+ 1374  cd kendell/
+ 1375  ls
+ 1376  cd CRISPResso/
+ 1377  ls
+ 1378  cd gM_remaining_amplicons/
+ 1379  ls
+ 1380  less runAll.pl.run.sh*
+ 1381  ls
+ 1382  cd CRISPRessoPooled_on_gM.WT.4days.Rep01/
+ 1383  ls
+ 1384  cd ../
+ 1385  ls
+ 1386  vim runAll.pl
+ 1387  perl runAll.pl
+ 1388  bsub < runAll.pl.run.sh
+ 1389  bjobs
+ 1390  ls
+ 1391  bjobs
+ 1392  ls
+ 1393  vim getMaxAmplicon.pl
+ 1394  perl getMaxAmplicon.pl 
+ 1395  vim getMaxAmplicon.pl
+ 1396  perl getMaxAmplicon.pl 
+ 1397  bjobs
+ 1398  ls
+ 1399  less getMaxAmplicon.pl
+ 1400  less getMaxAmplicon.pl.out 
+ 1401  vim getMaxAmplicon.pl
+ 1402  less getMaxAmplicon.pl
+ 1403  less getMaxAmplicon.pl.out
+ 1404  ls
+ 1405  vim getMaxAmplicon.pl
+ 1406  mkdir onAmplicons
+ 1407  cd onAmplicons/
+ 1408  mv ../getMaxAmplicon.pl* .
+ 1409  vim getMaxAmplicon.pl
+ 1410  ls
+ 1411  perl getMaxAmplicon.pl
+ 1412  rm getMaxAmplicon.pl.out 
+ 1413  vim getMaxAmplicon.pl 
+ 1414  perl getMaxAmplicon.pl
+ 1415  vim getMaxAmplicon.pl 
+ 1416  perl getMaxAmplicon.pl
+ 1417  vim getMaxAmplicon.pl 
+ 1418  perl getMaxAmplicon.pl
+ 1419  vim getMaxAmplicon.pl 
+ 1420  perl getMaxAmplicon.pl
+ 1421  less getMaxAmplicon.pl.commands.txt 
+ 1422  vim getMaxAmplicon.pl 
+ 1423  less getMaxAmplicon.pl.commands.txt 
+ 1424  vim getMaxAmplicon.pl 
+ 1425  perl getMaxAmplicon.pl
+ 1426  ess getMaxAmplicon.pl.commands.txt 
+ 1427  less getMaxAmplicon.pl.commands.txt 
+ 1428  CRISPResso -r1 /data/joung/CIRCLE-Seq/astrazeneca/171028_M05428_0041/1272livergXm4d_S49_L001_R1_001.fastq.gz -r2 /data/joung/CIRCLE-Seq/astrazeneca/171028_M05428_0041/1272livergXm4d_S49_L001_R2_001.fastq.gz -a TCATCAGCCAGGCCATCCTCCTGGGACGGGAGGGCGAGCATCAGCTCTTCATAATCTCCATCCTCGTCCTGGGCACCAGCGCCGGTGGGGCACAGTAGCAGCAACAGCAGCAGCAGCGGCGGCAACAGCGGCAACAGCGGCCACCGCAGCCACGCAGAGCAGTGGGTGCCCATCGGGGCGAGGAGAGGTGCGCGCGGCCTCGGGAAGGACATGGACGCCTGGGAC -q 30 -n 1272livergXm4d_S49 --ignore_substitutions --hide_mutations_outside_window_NHEJ
+ 1429  bsub < getMaxAmplicon.pl.run.sh
+ 1430  bjobs
+ 1431  ls
+ 1432  less CRISPResso_on_1494livergP_S46/Quantification_of_editing_frequency.txt 
+ 1433  less CRISPResso_on_1494livergP_S46/CRISPResso_RUNNING_LOG.txt 
+ 1434  which CRISPResso
+ 1435  less CRISPResso_on_1494livergP_S46/CRISPResso_RUNNING_LOG.txt 
+ 1436  less CRISPResso_on_1494livergP_S46/Quantification_of_editing_frequency.txt 
+ 1437  more $1
+ 1438* less CRISPResso_on_1494livergP_S46/
+ 1439  /data/pinello/SHARED_SOFTWARE/anaconda3/envs/crispresso1_py27/bin/CRISPResso -r1 /data/joung/CIRCLE-Seq/astrazeneca/171028_M05428_0041/1494livergP_S46_L001_R1_001.fastq.gz -r2 /data/joung/CIRCLE-Seq/astrazeneca/171028_M05428_0041/1494livergP_S46_L001_R2_001.fastq.gz -a AGTGCAGACTCTGGAGCCCTGAGGTGGGTTGGGAAGAGGACGGGCAGAGCAAAGCAAGTGGAGGCTGGAGGCTTACTGGGGACCTTACCAGGGGAGCGGTCTTCCTCTGTCTGGTGCCATGCTGGGATAATTCGCTCCAGGTTCCATGGGATGCTCTGGGCGAAGACAAAGGAGTCTTCCTCAATGTACTCCACATGGGGCAACTTCAGGGCCTACAGAACCAGACAGCCATGCACTTAGC -q 30 -n 1494livergP_S46 --ignore_substitutions --hide_mutations_outside_window_NHEJ
+ 1440  python ~/2017_07_CRISPRESSO_DOS/crispresso1/CRISPResso/CRISPResso.py -r1 /data/joung/CIRCLE-Seq/astrazeneca/171028_M05428_0041/1494livergP_S46_L001_R1_001.fastq.gz -r2 /data/joung/CIRCLE-Seq/astrazeneca/171028_M05428_0041/1494livergP_S46_L001_R2_001.fastq.gz -a AGTGCAGACTCTGGAGCCCTGAGGTGGGTTGGGAAGAGGACGGGCAGAGCAAAGCAAGTGGAGGCTGGAGGCTTACTGGGGACCTTACCAGGGGAGCGGTCTTCCTCTGTCTGGTGCCATGCTGGGATAATTCGCTCCAGGTTCCATGGGATGCTCTGGGCGAAGACAAAGGAGTCTTCCTCAATGTACTCCACATGGGGCAACTTCAGGGCCTACAGAACCAGACAGCCATGCACTTAGC -q 30 -n 1494livergP_S46 --ignore_substitutions --hide_mutations_outside_window_NHEJ
+ 1441  pwd
+ 1442  python
+ 1443  ls
+ 1444  vim getMaxAmplicon.pl
+ 1445  perl getMaxAmplicon.pl
+ 1446  vim getMaxAmplicon.pl
+ 1447  perl getMaxAmplicon.pl
+ 1448  less getMaxAmplicon.pl.commands.txt 
+ 1449  vim getMaxAmplicon.pl
+ 1450  perl getMaxAmplicon.pl
+ 1451  vim getMaxAmplicon.pl
+ 1452  perl getMaxAmplicon.pl
+ 1453  vim getMaxAmplicon.pl
+ 1454  perl getMaxAmplicon.pl
+ 1455  vim getMaxAmplicon.pl
+ 1456  perl getMaxAmplicon.pl
+ 1457  vim getMaxAmplicon.pl
+ 1458  perl getMaxAmplicon.pl
+ 1459  less getMaxAmplicon.pl.commands.txt 
+ 1460  vim getMaxAmplicon.pl
+ 1461  perl getMaxAmplicon.pl
+ 1462  vim getMaxAmplicon.pl
+ 1463  perl getMaxAmplicon.pl
+ 1464  vim getMaxAmplicon.pl
+ 1465  perl getMaxAmplicon.pl
+ 1466  vim getMaxAmplicon.pl
+ 1467  perl getMaxAmplicon.pl
+ 1468  vim getMaxAmplicon.pl
+ 1469  perl getMaxAmplicon.pl
+ 1470  vim getMaxAmplicon.pl
+ 1471  perl getMaxAmplicon.pl
+ 1472  vim getMaxAmplicon.pl
+ 1473  perl getMaxAmplicon.pl
+ 1474  vim getMaxAmplicon.pl
+ 1475  perl getMaxAmplicon.pl
+ 1476  less getMaxAmplicon.pl.out | less -S
+ 1477  vim getMaxAmplicon.pl
+ 1478  perl getMaxAmplicon.pl
+ 1479  vim getMaxAmplicon.pl
+ 1480  perl getMaxAmplicon.pl
+ 1481  less getMaxAmplicon.pl.commands.txt 
+ 1482  ls
+ 1483  vim getMaxAmplicon.pl
+ 1484  perl getMaxAmplicon.pl
+ 1485  vim getMaxAmplicon.pl
+ 1486  perl getMaxAmplicon.pl
+ 1487  vim getMaxAmplicon.pl
+ 1488  perl getMaxAmplicon.pl
+ 1489  vim getMaxAmplicon.pl
+ 1490  perl getMaxAmplicon.pl
+ 1491  vim getMaxAmplicon.pl
+ 1492  perl getMaxAmplicon.pl
+ 1493  less getMaxAmplicon.pl.commands.txt 
+ 1494  bsub < getMaxAmplicon.pl.run.sh
+ 1495  bjobs
+ 1496  ls
+ 1497  cd ../
+ 1498  ls
+ 1499  cd onAmplicons/
+ 1500  ls
+ 1501  less CRISPResso_on_1272livergXm4d_S49/Quantification_of_editing_frequency.txt 
+ 1502  ls
+ 1503  cd ../
+ 1504  ls
+ 1505  less amplicons_from_maggie.txt
+ 1506  ls
+ 1507  bjobs
+ 1508  ls
+ 1509  cd onAmplicons/
+ 1510  ls
+ 1511  cp ../..//../../CRISPResso/getCRISPResso/getCRISPResso_indel.py .
+ 1512  vim getCRISPResso_indel.py 
+ 1513  python getCRISPResso_indel.py 
+ 1514  ls
+ 1515  cd ../
+ 1516  mv onAmplicons/getCRISPResso_indel.py .
+ 1517* python getCRISPResso_indel.py -h --infolder getCRISPResso_indel.py 
+ 1518  mv getCRISPResso_indel.py onAmplicons/
+ 1519  cd onAmplicons/
+ 1520  python getCRISPResso_indel.py .
+ 1521  python getCRISPResso_indel.py --infolder .
+ 1522  ls
+ 1523  less getCRISPResso_indel.py 
+ 1524  ls
+ 1525  vim getCRISPResso_indel.py 
+ 1526  python getCRISPResso_indel.py .
+ 1527  vim getCRISPResso_indel.py 
+ 1528  python getCRISPResso_indel.py .
+ 1529  python getCRISPResso_indel.py 
+ 1530  pwd
+ 1531  python getCRISPResso_indel.py `pwd` 
+ 1532  python getCRISPResso_indel.py --infolder `pwd` 
+ 1533  vim getCRISPResso_indel.py 
+ 1534  python getCRISPResso_indel.py --infolder `pwd` 
+ 1535  vim getCRISPResso_indel.py 
+ 1536  python getCRISPResso_indel.py --infolder `pwd` 
+ 1537  vim getCRISPResso_indel.py 
+ 1538  python getCRISPResso_indel.py --infolder `pwd` 
+ 1539  vim getCRISPResso_indel.py 
+ 1540  python getCRISPResso_indel.py --infolder `pwd` 
+ 1541  ls
+ 1542  vim getCRISPResso_indel.py 
+ 1543  python getCRISPResso_indel.py --infolder `pwd` 
+ 1544  less /data/joung/users/jose/AstraZeneca/kendell/CRISPResso/gM_remaining_amplicons/onAmpliconsSummary_CRISPResso.txt
+ 1545  ls
+ 1546  vim getCRISPResso_indel.py 
+ 1547  rm ../onAmpliconsSummary_CRISPResso.txt 
+ 1548  python getCRISPResso_indel.py --infolder `pwd` 
+ 1549  less Summary_CRISPResso.txt 
+ 1550  perl ~/scripts/cols.pl Summary_CRISPResso.txt  | less -S
+ 1551  vim getCRISPResso_indel.py 
+ 1552  perl ~/scripts/cols.pl Summary_CRISPResso.txt  | less -S
+ 1553  python getCRISPResso_indel.py --infolder `pwd` 
+ 1554  perl ~/scripts/cols.pl Summary_CRISPResso.txt  | less -S
+ 1555  less CRISPResso_on_1485livergP_S45/Alleles_frequency_table.txt 
+ 1556  less CRISPResso_on_1485livergP_S45/Alleles_frequency_table_around_cut_site_for_CAGGTTCCATGGGATGCTCTGGG.txt 
+ 1557  less CRISPResso_on_1485livergP_S45/Alleles_frequency_table.txt 
+ 1558  less CRISPResso_on_1485livergP_S45/Alleles_frequency_table_around_cut_site_for_CAGGTTCCATGGGATGCTCTGGG.txt 
+ 1559  perl ~/scripts/cols.pl Summary_CRISPResso.txt  | less -S
+ 1560  s
+ 1561  ls
+ 1562  vim getSummary.pl
+ 1563  perl ~/scripts/cols.pl Summary_CRISPResso.txt  | less -S
+ 1564  perl ~/scripts/cols.pl -ml 500 Summary_CRISPResso.txt  | less -S
+ 1565  ls
+ 1566  vim getSummary.pl 
+ 1567  rm getSummary.pl 
+ 1568  ls
+ 1569  mv getCRISPResso_indel.py getCRISPResso.py
+ 1570  vim getCRISPResso.py 
+ 1571  python getCRISPResso.py 
+ 1572  vim getCRISPResso.py 
+ 1573  python getCRISPResso.py 
+ 1574  vim getCRISPResso.py 
+ 1575  python getCRISPResso.py 
+ 1576  less Summary_CRISPResso.txt 
+ 1577  vim Summary_CRISPResso.txt 
+ 1578  R
+ 1579  vim plot.r
+ 1580  vim az.txt
+ 1581  vim parseAZ.pl
+ 1582  ls
+ 1583  pwd
+ 1584  pushd ~/2017_07_DARPA_SIMULATIONS/
+ 1585  ls
+ 1586  cd binder/
+ 1587  ls
+ 1588  cd simulateIndels/
+ 1589  ls
+ 1590  mkdir data
+ 1591  cd data/
+ 1592  ls
+ 1593  head ../../../simulations/circle/replaceReads/100x_reps_pairs/runReplaceReads.py.commands.txt 
+ 1594  head ../../../simulations/circle/replaceReads/100x_reps_pairs/big/runReplaceReads.py.commands.txt 
+ 1595  cd ../
+ 1596  cd data/
+ 1597  mkdir reference
+ 1598  samtools idxstats /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam
+ 1599  samtools view /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam chr22 | less
+ 1600  ls
+ 1601  cp /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam ampSeq.bam
+ 1602  samtools view -b /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam chr22 > ampSeq.bam
+ 1603  head ../../../simulations/circle/replaceReads/100x_reps_pairs/big/runReplaceReads.py.commands.txt 
+ 1604  samtools faidx /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/WholeGenomeFasta/genome.fa chr22 | less
+ 1605  samtools faidx /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/WholeGenomeFasta/genome.fa chr22 | less > ref.chr22.fa
+ 1606  cd ../
+ 1607  ls
+ 1608  samtools faidx /data/pinello/COMMON_DATA/REFERENCE_GENOMES/Homo_sapiens/UCSC/hg38/Sequence/WholeGenomeFasta/genome.fa chr2 | less > ref.chr2.fa
+ 1609  samtools view -b /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/simulations/alignNA12878/1kbAroundCutsite.BWA.nameSort.bam chr2 > ampSeq.bam
+ 1610  samtools view -b /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/circle/SRR1046762.bam chr2 > ampSeq.bam 
+ 1611  cp /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/simulations/alignNA12878/1kbAroundCutsite.BWA.bam unaltered.bam
+ 1612  cp /data/pinello/PROJECTS/2017_07_DARPA_SIMULATIONS/simulations/circle/simulations/alignNA12878/1kbAroundCutsite.BWA.nameSort.bam unaltered.nameSort.bam
+ 1613  ls
+ 1614  mv ampSeq.bam data/
+ 1615  mv ref.chr2.fa data/
+ 1616  mv unaltered.* data/
+ 1617  ls
+ 1618  cd data/
+ 1619  ls
+ 1620  rm ref.chr22.fa 
+ 1621  ls
+ 1622  rmdir reference/
+ 1623  ls
+ 1624  cd ../
+ 1625  ls
+ 1626  cp ~/2017_07_DARPA_SIMULATIONS/simulations/circle/replaceReads/scripts/replaceReads.py .
+ 1627  mkdir out
+ 1628  samtools index data/ampSeq.bam 
+ 1629  samtools index data/unaltered.bam 
+ 1630  pwd
+ 1631  git status
+ 1632  git add data
+ 1633  git status
+ 1634  git
+ 1635  rm out/demo.bam
+ 1636  rm out/demo.bam.*
+ 1637  git add out
+ 1638  git status
+ 1639  git add demoReplaceReads.ipynb
+ 1640  git add replaceReads.py
+ 1641  git commit -m 'Added replaceReads.py and associated demo'
+ 1642  git push
+ 1643  gzip data/ref.chr2.fa
+ 1644  git rm data/ref.chr2.fa
+ 1645  git stats
+ 1646  git status
+ 1647  ls
+ 1648  ls data/
+ 1649  ls data/ref.chr2.fa.gz 
+ 1650  vim replaceReads
+ 1651  vim replaceReads.py 
+ 1652  gunzip data/ref.chr2.fa.gz 
+ 1653  ls
+ 1654  vim DockerFile
+ 1655  vim requirements.txt 
+ 1656  vim DockerFile
+ 1657  ls
+ 1658  git add DockerFile
+ 1659  git commit -m 'added dockerfile'
+ 1660  git status
+ 1661  vim DockerFile 
+ 1662  ls
+ 1663  git status
+ 1664  git rm chr2.fa.gz
+ 1665  ls
+ 1666  ls data/
+ 1667  git
+ 1668  ls
+ 1669  less chr2.fa.gz 
+ 1670  ls
+ 1671  mv chr2.fa.gz data/
+ 1672  ls
+ 1673  ls data/
+ 1674  git add data/chr2.fa.gz
+ 1675  git status
+ 1676  git add DockerFile
+ 1677  git add demoReplaceReads.ipynb
+ 1678  ls
+ 1679  git status
+ 1680  cd data/
+ 1681  git commit -m 'add zipped chr2'
+ 1682  git push
+ 1683  git rm data/ref.chr2.fa
+ 1684  history >> whadid
