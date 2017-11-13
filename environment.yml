@@ -1,0 +1,10 @@
+name: sim-environment
+channels:
+        - conda-forget
+        - bioconda
+dependencies:
+        - python
+        - samtools
+        - pindel
+        - pysam
+        - biopython
