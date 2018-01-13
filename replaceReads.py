@@ -119,13 +119,8 @@ for read in sourceAln.fetch(args.swapChr, args.swapLoc,args.swapLoc + 1):
 #	print str(read.cigar)
 #	print 'read starts' + str(rStart) + ' and ends '+ str(rEnd)
 	for op,count in read.cigar:
-#		print "op: '"+str(op)+"' count: '"+str(count)+"'"
 		#if match, add old sequence to new read
 		if op == MATCH:
-#			tStart = rStart + readInd
-#			tEnd = rStart + readInd + count
-#			print "from " + str(tStart) + " to " + str(tEnd) + "are match";
-
 			if rStart + readInd < args.swapLoc and rStart + readInd + count > args.swapLoc :
 				readsAtTarget.append(read)
 				readsAtTargetLookup[read.query_name] = True
@@ -133,19 +128,10 @@ for read in sourceAln.fetch(args.swapChr, args.swapLoc,args.swapLoc + 1):
 				readIsGood = 1
 			readInd += count
 		elif op == INSERTION:
-#			tStart = rStart + readInd
-#			tEnd = rStart + readInd + count
-#			print "from " + str(tStart) + " to " + str(tEnd) + "are insertion"
 			readInd += count
 		elif op == DELETION:
-#			tStart = rStart + readInd
-#			tEnd = rStart + readInd + count
-#			print "from " + str(tStart) + " to " + str(tEnd) + "are deletion"
 			next
 		elif op == CLIPPING:
-#			tStart = rStart + readInd
-#			tEnd = rStart + readInd + count
-#			print "from " + str(tStart) + " to " + str(tEnd) + "are clipping"
 			readInd += count
 		else:
 			raise Exception("got unrecognized op '"+str(op)+"' in cigar string " + str(read.cigar))
