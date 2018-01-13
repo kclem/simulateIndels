@@ -16,6 +16,7 @@ import os
 import copy
 import pprint
 
+#Changes from cigar string to string of cigar (e.g. 5M1D to MMMMMD)
 cigarExplodePattern = re.compile("(\d+)(\w)")
 def explodeCigar(cigarString):
 	explodedCigar = ""
@@ -23,6 +24,7 @@ def explodeCigar(cigarString):
 		explodedCigar += cigarChar * int(cigarCount)
 	return explodedCigar
 
+#Changes from string of cigar to cigar string (e.g. MMMMMD to 5M1D)
 cigarUnexplodePattern = re.compile(r'((\w)\2{0,})')
 def unexplodeCigar(explodedCigarString):
 	cigar = ""
@@ -31,14 +33,11 @@ def unexplodeCigar(explodedCigarString):
 	return cigar
 
 
-
+#replaces the changes in newRead with those in oldRead. If needed, the read is extended using bp from genome_seq
 def replaceRead(_oldRead,_newRead,_genome_seq,_genome_start):
 	oldRead = copy.deepcopy(_oldRead)
 	newRead = copy.deepcopy(_newRead)
 	originalLen = oldRead.query_length
-
-#	print("old: " + str(oldRead))
-#	print("new: " + str(newRead))
 
 	#old is NA (unaltered read)
 	oldStart = oldRead.reference_start - oldRead.query_alignment_start
@@ -47,10 +46,6 @@ def replaceRead(_oldRead,_newRead,_genome_seq,_genome_start):
 	#new is EMX1 (altered read)
 	newStart = newRead.reference_start - newRead.query_alignment_start
 	newEnd = newRead.reference_end + (newRead.query_length - newRead.query_alignment_end)
-
-#	print ("oldStart: " + str(oldStart) + " oldEnd " + str(oldEnd))
-#	print ("newStart: " + str(newStart) + " newEnd " + str(newEnd))
-
 
 	explodeOldCigar = explodeCigar(str(oldRead.cigarstring))
 	explodeNewCigar = explodeCigar(str(newRead.cigarstring))
@@ -142,18 +137,7 @@ def replaceRead(_oldRead,_newRead,_genome_seq,_genome_start):
 			newCigarLoc += 1
 			newReadLoc += 1
 			final_genomic_loc += 1
-#	print ("len is : " + str(len(oldRead.query_sequence)) + " mid is: " + final_read + " " + final_cigar + " oldStart " + str(oldStart) + " new start: " + str(newStart))
-#	print("at 2: newReadLoc: %s newCigarLoc: %s\n" % (newReadLoc,newCigarLoc)+\
-#		"oldReadLoc: %s oldCigarLoc: %s\n" % (oldReadLoc,oldCigarLoc)+\
-#		"final_genomic_loc: %s final_read: %s finalCigar: %s\n" % (final_genomic_loc,final_read,final_cigar))
 
-#	pprint.pprint(str(oldRead))
-	refPos = oldRead.get_reference_positions(full_length=True)
-#	print("pos: " + str(refPos))
-#	pprint.pprint(str(newRead))
-	refPos = newRead.get_reference_positions(full_length=True)
-#	print("pos: " + str(refPos))
-#	print ("len final read: " + str(len(final_read)) + " old len: " + str(len(oldRead.query_sequence)))
 	if len(final_read) < len(oldRead.query_sequence):
 		#catch old pointer up
 		while oldStart + oldReadLoc < oldEnd and oldStart + oldReadLoc < final_genomic_loc:
@@ -167,9 +151,6 @@ def replaceRead(_oldRead,_newRead,_genome_seq,_genome_start):
 			else:
 				oldCigarLoc += 1
 				oldReadLoc += 1
-#		print("at 3: newReadLoc: %s newCigarLoc: %s\n" % (newReadLoc,newCigarLoc)+\
-#			"oldReadLoc: %s oldCigarLoc: %s\n" % (oldReadLoc,oldCigarLoc)+\
-#			"final_genomic_loc: %s final_read: %s finalCigar: %s\n" % (final_genomic_loc,final_read,final_cigar))
 
 		#add from old
 		while final_genomic_loc < oldEnd and len(final_read) < len(oldRead.query_sequence):
@@ -192,20 +173,12 @@ def replaceRead(_oldRead,_newRead,_genome_seq,_genome_start):
 				oldReadLoc += 1
 				final_genomic_loc += 1
 
-#		print("at 4: newReadLoc: %s newCigarLoc: %s\n" % (newReadLoc,newCigarLoc)+\
-#			"oldReadLoc: %s oldCigarLoc: %s\n" % (oldReadLoc,oldCigarLoc)+\
-#			"final_genomic_loc: %s final_read: %s finalCigar: %s\n" % (final_genomic_loc,final_read,final_cigar))
-
 		#finally, add from genome
 		while len(final_read) < len(oldRead.query_sequence):
 			final_cigar += "M"
 			final_read += _genome_seq[final_genomic_loc - _genome_start]
 			final_genomic_loc += 1
 
-
-#	print("at 5: newReadLoc: %s newCigarLoc: %s\n" % (newReadLoc,newCigarLoc)+\
-#		"oldReadLoc: %s oldCigarLoc: %s\n" % (oldReadLoc,oldCigarLoc)+\
-#		"final_genomic_loc: %s final_read: %s finalCigar: %s\n" % (final_genomic_loc,final_read,final_cigar))
 
 #	if re.search("14D",newRead.cigarstring):
 #		print ("oldStart: " + str(oldStart) + " oldEnd " + str(oldEnd))
